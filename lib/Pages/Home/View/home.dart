@@ -60,7 +60,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 homeController.setName();
             // Get.snackbar('Hey','This is snackbar',snackPosition: SnackPosition.BOTTOM,);
           }, child: Text('Click')),
-          Obx( () => IconButton(onPressed: () async => homeController.getLike(), icon: Icon(Icons.whatshot,size: 40.0,color:  homeController.like.isTrue ? Colors.red : Colors.yellow,)))
+          Obx( () => IconButton(onPressed: () async => homeController.getLike(), icon: Icon(Icons.whatshot,size: 40.0,color:  homeController.like.isTrue ? Colors.red : Colors.yellow,))),
+          const SizedBox(height: 10.0,),
+          FlatButton(
+              color: Colors.green,
+              onPressed: ()async{
+                homeController.theme.isTrue ? homeController.changeTheme(ThemeData.dark()) : homeController.changeTheme(ThemeData.light());
+              }, child: Text('Change Theme')),
+
         ],
       ),
 
