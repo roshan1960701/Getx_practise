@@ -25,8 +25,19 @@ class _SecondScreenState extends State<SecondScreen> {
           // print(apiService.value);
           print(homeController.count);
         }, icon: const Icon(Icons.arrow_back_ios)),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            GetX<HomeController>(
+                init: HomeController(),
+                builder: (controller){
+              return Text('${controller.count}');
+            }),
+            FlatButton(onPressed: ()async => Get.find<HomeController>().increment(), child: Text('Count'))
 
-
+          ],
+        ),
       ),
     );
   }
