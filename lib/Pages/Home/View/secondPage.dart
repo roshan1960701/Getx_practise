@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/Pages/Home/Controller/home_controller.dart';
+import 'package:getx_app/Pages/Home/Controller/second_controller.dart';
 import 'package:getx_app/Services/api_service.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -34,7 +35,26 @@ class _SecondScreenState extends State<SecondScreen> {
                 builder: (controller){
               return Text('${controller.count}');
             }),
-            FlatButton(onPressed: ()async => Get.find<HomeController>().increment(), child: Text('Count'))
+            FlatButton(
+                color: Colors.cyan,
+                onPressed: ()async => Get.find<HomeController>().increment(), child: Text('Count')),
+            const SizedBox(
+              height: 20.0,
+            ),
+            GetBuilder<HomeController>(
+                init: HomeController(),
+                builder: (controller){
+                  return Text('${controller.no}');
+                }),
+            FlatButton(
+                color: Colors.cyan,
+                onPressed: ()async => Get.find<HomeController>().decreament(), child: Text('Number')),
+            const SizedBox(height: 20.0,),
+            GetBuilder<SecondController>(
+              init: SecondController(),
+              builder: (controller){
+                return Text('${controller.count}');
+              },),
 
           ],
         ),

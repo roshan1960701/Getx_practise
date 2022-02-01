@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_app/Pages/Home/Binding/home_binding.dart';
 import 'package:getx_app/Pages/Home/View/home.dart';
 import 'package:getx_app/Pages/Home/View/secondPage.dart';
+import 'package:getx_app/Pages/Home/View/third.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       ),
       getPages: [
         GetPage(name: '/home', page: () => const HomeScreen(),binding: HomeBinding()),
-        GetPage(name: '/second', page: () => const SecondScreen())
+        GetPage(name: '/second', page: () => const SecondScreen()),
+        GetPage(name: '/third', page: () => const ThirdScreen()),
       ],
       initialRoute: '/home',
 

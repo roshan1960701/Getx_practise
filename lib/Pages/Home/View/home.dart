@@ -76,6 +76,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.toNamed('/second');
                 }, child: Text('Next')),
 
+            const SizedBox(height: 10.0,),
+            FlatButton(
+                color: Colors.deepPurpleAccent,
+                onPressed: ()async{
+                  Get.toNamed('/third');
+                }, child: Text('Next')),
+
+
           ],
         ),
       ),

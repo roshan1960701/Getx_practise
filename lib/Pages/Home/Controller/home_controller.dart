@@ -7,11 +7,17 @@ class HomeController extends GetxController{
   final RxString rxstring = 'Hello'.obs;
    RxBool like = false.obs;
    RxBool theme = false.obs;
+   var no = 100;
 
 
 
   void increment(){
     count++;
+  }
+
+  void decreament(){
+    no--;
+    update();
   }
 
   void setName(){
@@ -27,6 +33,9 @@ class HomeController extends GetxController{
     theme.value = !theme.value;
   }
 
-
-
+  @override
+  void onInit() {
+    super.onInit();
+    print('this is init method');
+  }
 }
