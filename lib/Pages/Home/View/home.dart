@@ -83,6 +83,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.toNamed('/third');
                 }, child: Text('Next')),
 
+            FlatButton(
+                color: Colors.redAccent,
+                onPressed: ()async{
+                  Get.toNamed('/video');
+                }, child: Text('Video Screen')),
+
+            FlatButton(
+                color: Colors.redAccent,
+                onPressed: ()async{
+                  Get.toNamed('/slider');
+                }, child: Text('Slider Screen')),
+
 
           ],
         ),
