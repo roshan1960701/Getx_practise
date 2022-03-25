@@ -5,6 +5,7 @@ class HomeController extends GetxController{
 
   var count = 0.obs; // To make variable observable
   final RxString rxstring = 'Hello'.obs;
+  var bannerList = ['1','2','3','4','5','6','7','8'];
    RxBool like = false.obs;
    RxBool theme = false.obs;
    var no = 100;
