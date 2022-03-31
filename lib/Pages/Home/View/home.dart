@@ -57,6 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
             GetX<HomeController>(builder: (controller){
               return Text('${controller.remaining.value}');
             }),
+            Obx(
+                () => Text('${homeController.remaining.value}'),
+            ),
             const SizedBox(height: 10.0,),
             FlatButton(
                 color: Colors.cyanAccent,
