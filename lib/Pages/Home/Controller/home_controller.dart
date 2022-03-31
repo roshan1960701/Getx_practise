@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController{
 
+  var remaining = 16.obs;
   var count = 0.obs; // To make variable observable
   final RxString rxstring = 'Hello'.obs;
   var bannerList = ['1','2','3','4','5','6','7','8'];
@@ -34,9 +35,22 @@ class HomeController extends GetxController{
     theme.value = !theme.value;
   }
 
+  Stream<int> timer() {
+    return Stream.periodic(const Duration(seconds: 1), (_) {
+      if (remaining.value != 0) {
+        remaining.value--;
+      }else if(remaining.value == 0){
+        // otpResend.value = true;
+      }
+      return remaining.value;
+    });
+  }
+
+
   @override
   void onInit() {
     super.onInit();
+    remaining.bindStream(timer());
     print('this is init method');
   }
 }

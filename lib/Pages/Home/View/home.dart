@@ -54,6 +54,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 homeController.increment();
                 },
             ),
+            GetX<HomeController>(builder: (controller){
+              return Text('${controller.remaining.value}');
+            }),
+            const SizedBox(height: 10.0,),
+            FlatButton(
+                color: Colors.cyanAccent,
+                onPressed: ()async{
+                  homeController.remaining.value = 16;
+                  // Get.snackbar('Hey','This is snackbar',snackPosition: SnackPosition.BOTTOM,);
+                }, child: Text('start Timer')),
             const SizedBox(height: 10.0,),
             FlatButton(
                 color: Colors.red,
