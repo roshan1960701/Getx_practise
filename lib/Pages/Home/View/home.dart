@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/Pages/Home/Controller/home_controller.dart';
+import 'package:getx_app/Pages/Home/View/list_screen.dart';
 import 'package:getx_app/Pages/Home/View/secondPage.dart';
 import 'package:getx_app/Services/api_service.dart';
 class HomeScreen extends StatefulWidget {
@@ -67,6 +68,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   homeController.remaining.value = 16;
                   // Get.snackbar('Hey','This is snackbar',snackPosition: SnackPosition.BOTTOM,);
                 }, child: Text('start Timer')),
+            const SizedBox(height: 10.0,),
+            FlatButton(
+                color: Colors.indigo,
+                onPressed: ()async{
+                  Get.to(const ListScreen());
+                  // Get.snackbar('Hey','This is snackbar',snackPosition: SnackPosition.BOTTOM,);
+                }, child: Text('My List')),
             const SizedBox(height: 10.0,),
             FlatButton(
                 color: Colors.red,

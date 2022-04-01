@@ -10,6 +10,8 @@ class HomeController extends GetxController{
    RxBool like = false.obs;
    RxBool theme = false.obs;
    var no = 100;
+   var mylist = ['India','Russia','Ireland','Australia','New Zealand','Canada','UK','US'];
+   var newList = [].obs;
 
 
 
@@ -51,6 +53,9 @@ class HomeController extends GetxController{
   void onInit() {
     super.onInit();
     remaining.bindStream(timer());
+    mylist.forEach((element) {
+      newList.add(element);
+    });
     print('this is init method');
   }
 }
